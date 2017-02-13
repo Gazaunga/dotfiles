@@ -1,0 +1,34 @@
+%%%SCRIPT%%%
+mkdir {.fonts,.scripts,PDF,Python,.xmonad,.mpd}
+mkdir -p ~/.mpd/playlists
+touch ~/.mpd/{mpd.db,mpd.log,mpd.pid,mpdstate}
+touch ~/.xmonad/xmonad.hs
+touch ~/.xmobarrc
+touch ~/.xinitrc
+echo "exec xmonad" >> ~/.xinitrc
+touch ~/.config/redshift.conf
+touch ~/.xsessionrc
+mkdir ~/.config
+sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys BA300B7755AFCFAE
+sudo add-apt-repository 'deb https://typora.io ./linux/'
+sudo add-apt-repository ppa:alexx2000/doublecmd
+sudo add-apt-repository ppa:noobslab/apps
+sudo add-apt-repository ppa:noobslab/icons2
+sudo add-apt-repository ppa:noobslab/icons
+sudo add-apt-repository ppa:noobslab/icons
+sudo add-apt-repository ppa:peterlevi/ppa
+sudo add-apt-repository ppa:jonathonf/texlive
+git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
+sudo apt update && sudo apt -y install gdm3 texlive-full xmonad suckless-tools xscreensaver rofi konsole emacs texstudio arandr redshift redshift-gtk leafpad fontforge lxappearance feh python-pip xfce4-power-manager darktable rxvt-unicode-256color mpd ncmpcpp typora doublecmd-gtk clipgrab shadow-icon-theme emerald-icon-theme variety udiskie
+#echo "transition=1" >> ~/.config/redshift.conf
+#sed -i '2adjustment-method=randr' ~/.config/redshift.conf
+#redshift -l 39.3:-76.6 &
+echo "#!/bin/bash" ~/.xsessionrc
+echo "xrdb - merge .Xresources" ~/.xsessionrc
+echo "xmobar &" ~/.xsessionrc
+echo "xscreensaver -no-splash &" ~/.xsessionrc
+echo "exec xmonad" ~/.xsessionrc
+#echo "feh --bg-scale /usr/share/backgrounds/warty-final-ubuntu.png &" ~/.xsessionrc
+echo "udiskie &" ~/.xsessionrc
+echo "xfce4-power-manager &" ~/.xsessionrc
+echo "compton -cf" ~/.xsessionrc

@@ -1,0 +1,3 @@
+git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
+pacaur -S --noconfirm --noedit texlive-most texlive-lang compton dmenu roxterm konsole st rxvt-unicode rofi i3-lock-fancy-git oblogout spacefm emacs texstudio arandr leafpad fontforge lxappearance xfce4-power-manager darktable typora clipgrab udiskie variety
+mkdir {.fonts,.scripts,PDF,Python}

@@ -3,7 +3,7 @@ sudo pacman -Syu --noconfirm -- needed
 git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
 mkdir {.config,.scripts,Python,Sphinx,Music,.startpages}
 touch ~/.mpd/{mpd.db,mpd.log,mpd.pid,mpdstate}
-packagelist=(
+packagelist=$(
   menulibre # menu editor
   xorg-xkill
   xfce4-pulseaudio-plugin

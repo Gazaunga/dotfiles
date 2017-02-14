@@ -1,4 +1,5 @@
 #!/bin/bash
+sudo pacman -Syu
 git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
 mkdir {.config,Pictures,Downloads,.xmobar, Videos,Games,Documents,Python,Sphinx,Music,.startpages}
 touch ~/.mpd/{mpd.db,mpd.log,mpd.pid,mpdstate}

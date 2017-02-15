@@ -48,6 +48,8 @@ echo "alias timer='echo "Timer started. Stop with Ctrl-D." && date && time cat &
 echo "alias man='man -P most'" >> ~/.profile
 echo "alias l="ls -o -hX --group-directories-first"" >> ~/.profile
 echo "alias la="ls -o -AhX --group-directories-first"" >> ~/.profile
+wget https://github.com/vincelwt/harmony/releases/download/v0.4.5/harmony-0.4.5-amd64.deb
+dpkg -i harmony-0.4.5-amd64.deb
 echo "Checking..."
 sudo apt-get autoclean
 sudo apt-get autoremove

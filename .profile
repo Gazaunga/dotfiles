@@ -157,6 +157,12 @@ alias la="ls -o -AhX --group-directories-first"
 
 alias texupdate='tlmgr update --all'
 
+#resolution for your system
+alias res='xdpyinfo | grep resolution'
+
+# fonts
+alias fontc='fc-cache -fv'
+
 # Functions
 
 # tar extraction
@@ -179,6 +185,11 @@ extract() {      # Handy Extract Program
     else
         echo "'$1' is not a valid file!"
     fi
+}
+
+# to find and play audio straight from your terminal with mm " search terms" put the following in your .bashrc
+function mm() {
+    mpv --no-video --ytdl-format=bestaudio ytdl://ytsearch10:"$@"
 }
 
 # autostartx if running on the first tty:

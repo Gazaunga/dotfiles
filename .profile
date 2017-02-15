@@ -155,6 +155,7 @@ alias ya="yaourt  --nameonly --pager --color --noconfirm $1"
 alias l="ls -o -hX --group-directories-first"
 alias la="ls -o -AhX --group-directories-first"
 
+alias texupdate='tlmgr update --all'
 
 # Functions
 

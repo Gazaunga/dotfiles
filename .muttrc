@@ -1,0 +1,18 @@
+%%.muttrc%%
+
+set editor=emacs
+set imap_pass=buntu
+
+set folder=imaps://jeremy.ottley@imap.gmail.com/
+set spoolfile = +INBOX
+mailboxes = +INBOX
+
+set header_cache = ~/.cache/mutt
+
+set postponed = +[Gmail]/Drafts
+
+unset imap_passive
+
+set imap_keepalive = 300
+
+set mail_check = 120

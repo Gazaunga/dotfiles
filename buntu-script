@@ -48,5 +48,9 @@ echo "alias timer='echo "Timer started. Stop with Ctrl-D." && date && time cat &
 echo "alias man='man -P most'" >> ~/.profile
 echo "alias l="ls -o -hX --group-directories-first"" >> ~/.profile
 echo "alias la="ls -o -AhX --group-directories-first"" >> ~/.profile
+echo "Checking..."
+sudo apt-get autoclean
+sudo apt-get autoremove
+debsums --ignore-permissions
 echo "Your Xmo Box is ready!"
 reboot

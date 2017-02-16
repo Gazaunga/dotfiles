@@ -4,9 +4,9 @@ PATH=$PATH:$HOME/bin
 
 export EDITOR='emacs'
 export GIT_EDITOR='/usr/bin/emacs'
-export BROWSER=qutebrowser
+export BROWSER=opera
 export TERMINAL=konsole
-export FILEBROWSER=spacefm
+export FILEBROWSER=thunar
 
 # Aliases
 alias tmux='tmux -2' #Make tmux assume 256 colors.
@@ -117,7 +117,7 @@ alias Commit='git commit -m'
 
 alias gbranch='git branch'
 
-alias gcheckout='git checkout'
+alias gcheck='git checkout'
 
 alias Merge='git merge'
 

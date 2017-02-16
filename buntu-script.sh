@@ -53,6 +53,5 @@ dpkg -i harmony-0.4.5-amd64.deb
 echo "Checking..."
 sudo apt-get autoclean
 sudo apt-get autoremove
-debsums --ignore-permissions
 echo "Your Xmo Box is ready!"
 reboot

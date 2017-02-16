@@ -1,5 +1,15 @@
 #!/bin/bash
 sudo pacman -Syu
+wget https://raw.githubusercontent.com/Gazaunga/dotfiles/master/mpv.conf
+wget https://raw.githubusercontent.com/Gazaunga/dotfiles/master/.profile
+wget https://raw.githubusercontent.com/Gazaunga/dotfiles/master/.bashrc
+wget https://raw.githubusercontent.com/Gazaunga/dotfiles/master/.Xdefaults
+wget https://raw.githubusercontent.com/Gazaunga/dotfiles/master/.Xresources
+wget https://raw.githubusercontent.com/Gazaunga/dotfiles/master/.screenrc
+touch .ncmpcpp
+cd .ncmpcpp
+wget https://raw.githubusercontent.com/Gazaunga/dotfiles/master/config
+cd ~
 git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
 mkdir {.config,Pictures,Downloads,.xmobar, Videos,Games,Documents,Python,Sphinx,Music,.startpages}
 touch ~/.mpd/{mpd.db,mpd.log,mpd.pid,mpdstate}

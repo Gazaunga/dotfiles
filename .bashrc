@@ -8,6 +8,16 @@ else
 export PS1="\[$(tput setaf 1)\]┌─╼\[$(tput setaf 3)\] \u\[$(tput setaf 1)\] ╺─╸\[$(tput setaf 1)\] \H \[$(tput setaf 7)\][\[$(tput setaf 5)\]\w\[$(tput setaf 7)\]]\n\[$(tput setaf 1)\]\$(if [[ \$? == 0 ]]; then echo \"\[$(tput setaf 1)\]└────╼\"; else echo \"\[$(tput setaf 1)\]└╼\"; fi) \[$(tput setaf 7)\]"
 fi
 
+# PATH
+# we want the various sbins on the path along with /usr/local/bin
+PATH="$PATH:/usr/local/sbin:/usr/sbin:/sbin"
+PATH="/usr/local/bin:$PATH"
+
+# put ~/bin first on PATH
+if [ -d "$HOME/bin" ]; then
+    PATH="$HOME/bin:$PATH"
+fi
+
 # Auto cd
 shopt -s autocd
 

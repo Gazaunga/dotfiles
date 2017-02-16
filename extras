@@ -1,0 +1,205 @@
+%
+touch ~/dotfiles
+git clone https://github.com/nicksp/dotfiles.git ~/dotfiles
+cd ~/dotfiles
+sudo chmod +x setup.sh
+./setup.sh
+%
+sudo apt-get -qq update && sudo apt-get -qq dist-upgrade
+cd
+git clone https://github.com/nojhan/liquidprompt.git
+source liquidprompt/liquidprompt
+echo '[[ $- = *i* ]] && source ~/liquidprompt/liquidprompt' >> ~/.bashrc
+
+# install glances, like htop
+curl -L https://bit.ly/glances | /bin/bash
+
+or
+
+pip install glances
+pip install ImageScraper
+
+#sejda cli pdf manipulator
+wget https://github.com/torakiki/sejda/releases/download/v3.0.0.M11/sejda-console_3.0.0.M11-1_all.deb
+or
+wget https://github.com/torakiki/sejda/releases/download/v3.0.0.M11/sejda-console-3.0.0.M11-bin.zip
+
+# weather in term
+apt-get install ansiweather
+or
+https://github.com/fcambus/ansiweather.git
+cd ansiweather
+./ansiweather
+
+ansiweather -l Baltimore,US -u imperial -s true -f 5 -d true
+
+%
+git clone https://github.com/jmcantrell/bashful.git
+%
+# Quake Style Terminal Emulator for i3
+exec --no-startup-id xterm -name qterm
+for_window [instance="qterm"] floating enable;
+for_window [instance="qterm"] move scratchpad; [instance="qterm"] scratchpad show; move position 0px 22px; resize shrink height 
+
+300px; resize grow width 683px; move scratchpad
+bindsym $mod+t [instance="qterm"] scratchpad show
+%
+https://github.com/flazzarini/dotfiles/tree/master/roxterm
+%
+# See what we have to work with ...
+HAVE_VIM=$(command -v vim)
+HAVE_GVIM=$(command -v gvim)
+
+# EDITOR
+if [ -n "$HAVE_VIM" ]; then
+    EDITOR=vim
+else
+    EDITOR=vi
+fi
+export EDITOR
+%
+# ----------------------------------------------------------------------
+# PROMPT
+# ----------------------------------------------------------------------
+
+RED="\[\033[0;31m\]"
+BROWN="\[\033[0;33m\]"
+GREY="\[\033[0;97m\]"
+BLUE="\[\033[0;34m\]"
+PS_CLEAR="\[\033[0m\]"
+SCREEN_ESC="\[\033k\033\134\]"
+
+if [ "$LOGNAME" = "root" ]; then
+    COLOR1="${RED}"
+    COLOR2="${BROWN}"
+    P="#"
+elif hostname | grep -q '\.github\.'; then
+    GITHUB=true
+    COLOR1="\[\e[0;94m\]"
+    COLOR2="\[\e[0;92m\]"
+    P="\$"
+else
+    COLOR1="${BLUE}"
+    COLOR2="${BROWN}"
+    P="\$"
+fi
+
+prompt_simple() {
+    unset PROMPT_COMMAND
+    PS1="[\u@\h:\w]\$ "
+    PS2="> "
+}
+
+prompt_compact() {
+    unset PROMPT_COMMAND
+    PS1="${COLOR1}${P}${PS_CLEAR} "
+    PS2="> "
+}
+
+prompt_color() {
+    PS1="${GREY}[${COLOR1}\u${GREY}@${COLOR2}\h${GREY}:${COLOR1}\W${GREY}]${COLOR2}$P${PS_CLEAR} "
+    PS2="\[[33;1m\] \[[0m[1m\]> "
+}
+%
+# Case-insensitive globbing (used in pathname expansion)
+shopt -s nocaseglob;
+
+# Autocorrect typos in path names when using `cd`
+shopt -s cdspell;
+
+
+%
+# Create a new directory and enter it
+function mkd() {
+	mkdir -p "$@" && cd "$_";
+}
+%
+# Create a .tar.gz archive, using `zopfli`, `pigz` or `gzip` for compression
+function targz() {
+	local tmpFile="${@%/}.tar";
+	tar -cvf "${tmpFile}" --exclude=".DS_Store" "${@}" || return 1;
+
+	size=$(
+		stat -f"%z" "${tmpFile}" 2> /dev/null; # macOS `stat`
+		stat -c"%s" "${tmpFile}" 2> /dev/null;  # GNU `stat`
+	);
+
+	local cmd="";
+	if (( size < 52428800 )) && hash zopfli 2> /dev/null; then
+		# the .tar file is smaller than 50 MB and Zopfli is available; use it
+		cmd="zopfli";
+	else
+		if hash pigz 2> /dev/null; then
+			cmd="pigz";
+		else
+			cmd="gzip";
+		fi;
+	fi;
+
+	echo "Compressing .tar ($((size / 1000)) kB) using \`${cmd}\`…";
+	"${cmd}" -v "${tmpFile}" || return 1;
+	[ -f "${tmpFile}" ] && rm "${tmpFile}";
+
+	zippedSize=$(
+		stat -f"%z" "${tmpFile}.gz" 2> /dev/null; # macOS `stat`
+		stat -c"%s" "${tmpFile}.gz" 2> /dev/null; # GNU `stat`
+	);
+
+	echo "${tmpFile}.gz ($((zippedSize / 1000)) kB) created successfully.";
+}
+%
+# Determine size of a file or total size of a directory
+function fs() {
+	if du -b /dev/null > /dev/null 2>&1; then
+		local arg=-sbh;
+	else
+		local arg=-sh;
+	fi
+	if [[ -n "$@" ]]; then
+		du $arg -- "$@";
+	else
+		du $arg .[^.]* ./*;
+	fi;
+}
+%
+# `s` with no arguments opens the current directory in Spacemacs, otherwise
+# opens the given location
+function s() {
+	if [ $# -eq 0 ]; then
+		emacs .;
+	else
+		emacs "$@";
+	fi;
+}
+%
+# `tre` is a shorthand for `tree` with hidden files and color enabled, ignoring
+# the `.git` directory, listing directories first. The output gets piped into
+# `less` with options to preserve color and line numbers, unless the output is
+# small enough for one screen.
+function tre() {
+	tree -aC -I '.git|node_modules|bower_components' --dirsfirst "$@" | less -FRNX;
+}
+%
+# make `less` not clear the screen upon exit
+alias less='less -X';
+
+%
+
+%
+
+%
+
+%
+
+%
+
+%
+
+%
+
+%
+
+%
+
+%
+

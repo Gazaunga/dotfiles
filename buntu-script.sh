@@ -3,8 +3,8 @@ sudo apt-get -y update
 sudo add-apt-repository -y 'deb https://typora.io ./linux/'
 sudo add-apt-repository -y ppa:noobslab/apps
 sudo add-apt-repository -y ppa:peterlevi/ppa
-sudo add-apt-repository -y ppa:jonathonf/texlive
-sudo apt-get -y update
+sudo add-apt-repository -y ppa:jonathonf/texlive-2016
+sudo apt-get -y --allow-unauthenticated update
 git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
 mkdir bin
 mkdir ~/Pictures
@@ -12,7 +12,7 @@ wget --directory-prefix=~/Pictures/ https://wallpapers.wallhaven.cc/wallpapers/f
 git clone https://github.com/vicfryzel/xmonad-config.git .xmonad
 touch ~/.xmobarrc
 touch ~/.xsessionrc
-sudo apt-get -y install gdm3 texlive-full xmonad xmobar stalonetray thunar ttf-ms-fonts opera libghc-xmonad-contrib-dev cabal-install xcompmgr scrot suckless-tools xscreensaver python-pip xfce4-power-manager moc rofi konsole emacs texstudio arandr leafpad fontforge lxappearance feh darktable rxvt-unicode-256color typora clipgrab variety
+sudo apt-get -y install gdm3 lightdm texlive-full xmonad xmobar stalonetray thunar libghc-xmonad-contrib-dev cabal-install xcompmgr scrot suckless-tools xscreensaver python-pip xfce4-power-manager moc rofi konsole emacs texstudio arandr leafpad fontforge lxappearance feh darktable rxvt-unicode-256color typora clipgrab variety
 sudo pip install udiskie
 sudo cabal update
 sudo cabal install --global yeganesh

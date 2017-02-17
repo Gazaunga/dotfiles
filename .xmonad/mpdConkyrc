@@ -1,0 +1,14 @@
+background no
+short_units yes
+out_to_console yes
+out_to_x no
+# Update interval in seconds
+update_interval 1.0
+
+TEXT
+$if_mpd_playing\
+ Artist  ^fg(\#FFFFFF)${mpd_artist}^fg()
+ Album   ^fg(\#FFFFFF)${mpd_album}^fg()
+ Track   ^fg(\#FFFFFF)${mpd_title}^fg()
+ ${exec /home/tyler/.xmonad/dzen/dzenBar.sh}
+$endif

@@ -1,0 +1,17 @@
+background no
+short_units yes
+out_to_console yes
+out_to_x no
+# Update interval in seconds
+update_interval 5.0
+
+TEXT
+$if_mpd_playing^fg(\#252525)^r(1x16)^fg()^ca(1,/home/tyler/.xmonad/dzen/dzenMusic.sh) ^fg(\#385E6B)^i(/home/tyler/images/icons/8/note.xbm)^fg() ^fg(\#546A29)${mpd_artist}^fg() ^ca()\
+^fg(\#ffffff)^ca(1,mpc prev)^i(/home/tyler/images/icons/8/prev.xbm)^ca() ${exec /home/tyler/.xmonad/dzen/playPause.sh} ^ca(1,mpc next)^i(/home/tyler/images/icons/8/next.xbm)^ca()^fg() ^fg(\#252525)^r(1x16)^fg()$endif \
+^fg(\#385E6B)^i(/home/tyler/images/icons/8/spkr_01.xbm)^fg() ${exec pamixer --get-volume}% ^fg(\#252525)^r(1x16)^fg() \
+^ca(1,/home/tyler/.xmonad/dzen/dzenNetwork.sh)^fg(\#385E6B)^i(/home/tyler/images/icons/8/net_wired.xbm)^fg() ${addr enp2s0} ^fg(\#252525)^r(1x16)^fg()^ca() \
+^ca(1,/home/tyler/.xmonad/dzen/dzenHardware.sh)^fg(\#385E6B)^i(/home/tyler/images/icons/8/arch_10x10.xbm)^fg() ${exec uname -r} ^fg(\#252525)^r(1x16)^fg()^ca() \
+^ca(1,/home/tyler/.xmonad/dzen/dzenPacman.sh)^fg(\#385E6B)^i(/home/tyler/images/icons/8/pacman.xbm)^fg() ${exec pacman -Qu | wc -l} updates ^fg(\#252525)^r(1x16)^fg()^ca() \
+^ca(1,/home/tyler/.xmonad/dzen/dzenCal.sh)^fg(\#385E6B)^i(/home/tyler/images/icons/8/calendar.xbm)^fg() ${exec date +"%a %b %d %Y"} ^fg(\#252525)^r(1x16)^fg()^ca() \
+^fg(\#385E6B)^i(/home/tyler/images/icons/8/clock.xbm)^fg() ${exec date +"%I:%M %p"} ^fg(\#252525)^r(1x16)^fg() \
+^ca(1,/home/tyler/.xmonad/dzen/dzenLog.sh)^fg(\#385E6B)^i(/home/tyler/images/icons/8/info_02.xbm)^fg() ^ca()^fg(\#252525)^r(1x16)^fg()

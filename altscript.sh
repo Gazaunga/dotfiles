@@ -1,8 +1,8 @@
 #!/bin/bash
 sudo pacman -Syu
 wget https://raw.githubusercontent.com/Gazaunga/dotfiles/master/mpv.conf
-wget https://raw.githubusercontent.com/Gazaunga/dotfiles/master/.profile -O .bashrc
-wget https://raw.githubusercontent.com/Gazaunga/dotfiles/master/.bashrc
+wget https://raw.githubusercontent.com/Gazaunga/dotfiles/master/.profile
+wget https://raw.githubusercontent.com/Gazaunga/dotfiles/master/.bashrc -O .bashrc
 wget https://raw.githubusercontent.com/Gazaunga/dotfiles/master/.Xdefaults
 wget https://raw.githubusercontent.com/Gazaunga/dotfiles/master/.Xresources
 wget https://raw.githubusercontent.com/Gazaunga/dotfiles/master/.screenrc

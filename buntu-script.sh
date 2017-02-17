@@ -12,7 +12,7 @@ wget --directory-prefix=~/Pictures/ https://wallpapers.wallhaven.cc/wallpapers/f
 git clone https://github.com/vicfryzel/xmonad-config.git .xmonad
 touch ~/.xmobarrc
 touch ~/.xsessionrc
-sudo apt-get -y --allow-unauthenticated install gdm3 texlive-full xmonad xmobar stalonetray thunar thunar gvfs file-roller thunar-archive plugin thunar-shares-plugin thunar-volman ffmpegthumbnailer tumbler raw-thumbnailer gvfs-smb sshfs libghc-xmonad-contrib-dev cabal-install xcompmgr scrot suckless-tools xscreensaver python-pip xfce4-power-manager moc rofi konsole emacs texstudio arandr leafpad fontforge lxappearance feh darktable rxvt-unicode-256color typora clipgrab variety
+sudo apt-get -y --allow-unauthenticated install gdm3 texlive-full xmonad xmobar stalonetray thunar gvfs file-roller thunar-archive plugin thunar-shares-plugin thunar-volman ffmpegthumbnailer tumbler raw-thumbnailer gvfs-smb sshfs libghc-xmonad-contrib-dev cabal-install xcompmgr scrot suckless-tools xscreensaver python-pip xfce4-power-manager moc rofi konsole emacs texstudio arandr leafpad fontforge lxappearance feh darktable rxvt-unicode-256color typora clipgrab variety
 sudo pip install rainbowstream glances ImageScraper
 sudo cabal update
 sudo cabal install --global yeganesh

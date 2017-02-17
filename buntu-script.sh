@@ -53,5 +53,11 @@ dpkg -i harmony-0.4.5-amd64.deb
 echo "Checking..."
 sudo apt-get autoclean
 sudo apt-get autoremove
+wget https://raw.githubusercontent.com/Gazaunga/dotfiles/master/mpv.conf
+wget https://raw.githubusercontent.com/Gazaunga/dotfiles/master/.profile
+wget https://raw.githubusercontent.com/Gazaunga/dotfiles/master/.bashrc -O .bashrc
+wget https://raw.githubusercontent.com/Gazaunga/dotfiles/master/.Xdefaults
+wget https://raw.githubusercontent.com/Gazaunga/dotfiles/master/.Xresources
+wget https://raw.githubusercontent.com/Gazaunga/dotfiles/master/.screenrc
 echo "Your Xmo Box is ready!"
 reboot

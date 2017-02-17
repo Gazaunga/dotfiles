@@ -184,6 +184,7 @@ function tre() {
 alias less='less -X';
 
 %
+fontconfig-enhanced-defaults
 
 %
 

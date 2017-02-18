@@ -18,8 +18,8 @@ static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
 
 static const Rule rules[] = {
 	/* class      instance    title       tags mask     isfloating   monitor */
-	{ "Gimp",     NULL,       NULL,       0,            True,        -1 },
-	{ "Firefox",  NULL,       NULL,       1 << 8,       False,       -1 },
+	{ "Inkscape",     NULL,       NULL,       0,            True,        -1 },
+	{ "Texstudio",  NULL,       NULL,       1 << 8,       False,       -1 },
 };
 
 /* layout(s) */
@@ -51,8 +51,8 @@ static const char *termcmd[]  = { "uxterm", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
-	{ MODKEY,                       XK_p,      spawn,          {.v = rofi -show run } },
-	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = konsole } },
+	{ MODKEY,                       XK_p,      spawn,          {.v = rofi [-show run] } },
+	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termite } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },

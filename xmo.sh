@@ -23,4 +23,5 @@ wget https://raw.githubusercontent.com/Gazaunga/dotfiles/master/.xmonad/mpdConky
 wget https://raw.githubusercontent.com/Gazaunga/dotfiles/master/.xmonad/playPause.sh
 cd ~/
 sudo pacman -Syu
-"Your Xmonad-Box is ready!"
+echo "Your Xmonad-Box is ready!"
+reboot

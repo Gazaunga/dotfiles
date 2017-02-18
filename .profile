@@ -163,6 +163,8 @@ alias res='xdpyinfo | grep resolution'
 # fonts
 alias fontc='fc-cache -fv'
 
+alias exe='sudo chmod +x'
+
 # Functions
 
 # tar extraction

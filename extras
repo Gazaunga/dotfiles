@@ -187,11 +187,11 @@ alias less='less -X';
 fontconfig-enhanced-defaults
 
 %
-
+urxvtcd -e bash -c 'screen -dRR -S $HOSTNAME
 %
-
+alias fuck="sudo !!"
 %
-
+"xmonad --recompile && xmonad --restart" 
 %
 
 %

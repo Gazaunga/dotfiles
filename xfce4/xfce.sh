@@ -1,5 +1,6 @@
 #!/bin/bash
 sudo pacman -Syu
+git clone https://www.github.com/syl20bnr/spacemacs ~/.emacs.d
 mkdir .xmonad
 mkdir .config
 cd .config

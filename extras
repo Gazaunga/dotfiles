@@ -193,7 +193,46 @@ alias fuck="sudo !!"
 %
 "xmonad --recompile && xmonad --restart" 
 %
+alias psg='ps aux | grep'
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias .....='cd ../../../..'
+alias ......='cd ../../../../..'
 
+
+%
+
+die() { echo $@; exit -1; }
+
+%
+wget-rec() {
+  wget --recursive \
+    --page-requisites \
+    --html-extension \
+    --convert-links \
+    --no-parent \
+    $*
+}
+%
+mkdircd() { mkdir $1 && cd $1; }
+alias mcd='mkdircd'
+%
+memo() {
+  echo "$*" | mail -n -s "$*" jeremy.ottley@gmail.com
+}
+%
+function stopwatch(){
+  case $(uname) in
+    "Linux") DATE=date ;;
+    "Darwin") DATE=gdate ;;
+  esac
+  local BEGIN=`$DATE +%s`
+  while true; do
+    echo -ne "$($DATE -u --date @$((`$DATE +%s` - $BEGIN)) +%H:%M:%S)\r";
+  done
+}
+%
 %
 
 %

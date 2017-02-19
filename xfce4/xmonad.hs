@@ -22,7 +22,7 @@ import XMonad.Layout.Maximize
 -- The preferred terminal program, which is used in a binding below and by
 -- certain contrib modules.
 --
-myTerminal      = "konsole"
+myTerminal      = "termite"
 
 -- Width of the window border in pixels.
 --

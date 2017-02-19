@@ -21,5 +21,8 @@ wget https://raw.githubusercontent.com/Gazaunga/dotfiles/master/.Xdefaults
 wget https://raw.githubusercontent.com/Gazaunga/dotfiles/master/.Xresources
 wget https://raw.githubusercontent.com/Gazaunga/dotfiles/master/.screenrc
 pacaur -S xmonad xmonad-contrib neofetch termite emacs pandoc typora
+cd .xmonad
+wget https://raw.githubusercontent.com/Gazaunga/dotfiles/master/xfce4/xmonad.hs
+cd ~/
 xmonad --replace
 xmonad --recompile && xmonad --restart

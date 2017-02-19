@@ -1,5 +1,5 @@
 %
-touch ~/dotfiles
+mkdir ~/dotfiles
 git clone https://github.com/nicksp/dotfiles.git ~/dotfiles
 cd ~/dotfiles
 sudo chmod +x setup.sh

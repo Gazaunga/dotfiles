@@ -20,6 +20,6 @@ wget https://raw.githubusercontent.com/Gazaunga/dotfiles/master/.bashrc -O .bash
 wget https://raw.githubusercontent.com/Gazaunga/dotfiles/master/.Xdefaults
 wget https://raw.githubusercontent.com/Gazaunga/dotfiles/master/.Xresources
 wget https://raw.githubusercontent.com/Gazaunga/dotfiles/master/.screenrc
-pacaur -S xmonad-git xmonad-contrib-git neofetch termite emacs pandoc typora
+pacaur -S xmonad xmonad-contrib neofetch termite emacs pandoc typora
 xmonad --replace
 xmonad --recompile && xmonad --restart

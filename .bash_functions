@@ -2,6 +2,12 @@
 # FUNCTIONS
 # ----------------------------------------------------------------------
 
+# List contents after cd
+
+function cd()
+{
+ builtin cd "$*" && ls
+}
 
 # Tar extraction
 

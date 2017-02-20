@@ -5,6 +5,12 @@ sudo add-apt-repository -y ppa:noobslab/apps
 sudo add-apt-repository -y ppa:peterlevi/ppa
 sudo add-apt-repository -y ppa:jonathonf/texlive-2016
 sudo apt-get -y --allow-unauthenticated update
+mkdir .config
+cd .config
+mkdir termite
+cd termite
+wget https://raw.githubusercontent.com/Gazaunga/dotfiles/master/.config/termite/config
+cd ~/
 git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
 mkdir bin
 cd bin
@@ -15,7 +21,7 @@ cd ~/
 mkdir ~/Pictures
 wget --directory-prefix=~/Pictures/ https://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-89055.jpg 
 touch ~/.xsessionrc
-sudo apt-get -y --allow-unauthenticated install gdm3 texlive-full xmonad xmobar stalonetray mpv youtube-dl libghc-xmonad-contrib-dev cabal-install xcompmgr scrot dmenu xscreensaver python-pip xfce4-power-manager moc rofi termite emacs texstudio arandr leafpad fontforge lxappearance feh darktable rxvt-unicode-256color typora clipgrab variety
+sudo apt-get -y --allow-unauthenticated install gdm3 texlive-full xmonad dzen2 xmobar nautilus stalonetray mpv youtube-dl libghc-xmonad-contrib-dev cabal-install xcompmgr scrot dmenu xscreensaver python-pip xfce4-power-manager moc rofi termite emacs texstudio arandr leafpad fontforge lxappearance feh darktable rxvt-unicode-256color typora clipgrab variety
 sudo pip install rainbowstream glances ImageScraper
 sudo cabal update
 sudo cabal install --global yeganesh
@@ -44,5 +50,30 @@ wget https://raw.githubusercontent.com/Gazaunga/dotfiles/master/.bash_functions
 wget https://raw.githubusercontent.com/Gazaunga/dotfiles/master/.Xdefaults
 wget https://raw.githubusercontent.com/Gazaunga/dotfiles/master/.Xresources
 wget https://raw.githubusercontent.com/Gazaunga/dotfiles/master/.screenrc
+mkdir ~/Templates/
+touch ~/Templates/new
+mkdir .xmonad
+echo "Loading Xmonad Config"
+cd ~/.xmonad
+wget https://raw.githubusercontent.com/Gazaunga/dotfiles/master/.xmonad/xmonad.hs
+wget https://raw.githubusercontent.com/Gazaunga/dotfiles/master/.xmonad/Config.hs
+wget https://raw.githubusercontent.com/Gazaunga/dotfiles/master/.xmonad/Hooks.hs
+wget https://raw.githubusercontent.com/Gazaunga/dotfiles/master/.xmonad/Layouts.hs
+wget https://raw.githubusercontent.com/Gazaunga/dotfiles/master/.xmonad/Scratch.hs
+wget https://raw.githubusercontent.com/Gazaunga/dotfiles/master/.xmonad/Themes.hs
+wget https://raw.githubusercontent.com/Gazaunga/dotfiles/master/.xmonad/Topics.hs
+wget https://github.com/Gazaunga/dotfiles/blob/master/.xmonad/Utils.hs
+wget https://raw.githubusercontent.com/Gazaunga/dotfiles/master/.xmonad/config.sh
+wget https://raw.githubusercontent.com/Gazaunga/dotfiles/master/.xmonad/conkyrc
+wget https://raw.githubusercontent.com/Gazaunga/dotfiles/master/.xmonad/dzenBar.sh
+wget https://raw.githubusercontent.com/Gazaunga/dotfiles/master/.xmonad/dzenCal.sh
+wget https://raw.githubusercontent.com/Gazaunga/dotfiles/master/.xmonad/dzenHardware.sh
+wget https://raw.githubusercontent.com/Gazaunga/dotfiles/master/.xmonad/dzenLog.sh
+wget https://raw.githubusercontent.com/Gazaunga/dotfiles/master/.xmonad/dzenMusic.sh
+wget https://raw.githubusercontent.com/Gazaunga/dotfiles/master/.xmonad/dzenNetwork.sh
+wget https://raw.githubusercontent.com/Gazaunga/dotfiles/master/.xmonad/dzenPacman.hs
+wget https://raw.githubusercontent.com/Gazaunga/dotfiles/master/.xmonad/mpdConkyrc
+wget https://raw.githubusercontent.com/Gazaunga/dotfiles/master/.xmonad/playPause.sh
+sudo apt-get -qq update && sudo apt-get -qq dist-upgrade
 echo "Your Xmo Box is ready!"
 reboot

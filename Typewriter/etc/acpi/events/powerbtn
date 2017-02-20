@@ -1,0 +1,2 @@
+event=button[ /]power
+action=/usr/sbin/pm-hibernate

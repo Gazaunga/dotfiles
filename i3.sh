@@ -31,4 +31,6 @@ cd ~/.config/mpv
 wget https://raw.githubusercontent.com/Gazaunga/dotfiles/master/.config/mpv/mpv.conf
 cd ~/.config/cava
 wget https://raw.githubusercontent.com/Gazaunga/dotfiles/master/.config/cava/config
+cd ~/Pictures
+wget https://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-222649.jpg
 reboot

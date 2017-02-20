@@ -1,4 +1,4 @@
-#!/bin/bas
+#!/bin/bash
 sudo pacman -Syu
 git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
 wget https://raw.githubusercontent.com/Gazaunga/dotfiles/master/mpv.conf

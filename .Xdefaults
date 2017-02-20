@@ -5,3 +5,20 @@ Xft.hintstyle: hintslight
 Xft.dpi: 96
 Xft.rgba: rgb
 Xft.lcdfilter: lcddefault
+
+XTerm*foreground:blue
+XTerm*background:yellow
+
+XTerm*reverseVideo:   	    on
+xterm*VT100.geometry:       80x24
+xterm-big*VT100.geometry:   80x48
+xterm-small*VT100.geometry: 80x10
+
+oneko*tora: true
+
+emacs*Font: 8x13             ! emacs with 8x13 font, 80 columns
+emacs*geometry: 80x48+0+0    !   wide, 48 columns high
+
+
+
+xrdb -merge ~/.Xdefaults

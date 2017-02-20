@@ -4,6 +4,10 @@ fbterm screen fbv grub-customizer mplayer fonts-inconsolata v86d
 
 
 
+sudo sh -c "echo uvesafb >> /etc/initramfs-tools/modules"
+sudo modprobe uvesafb
+sudo sh -c "echo options uvesafb mode_option=1920×1080-24 scroll=ywrap > /etc/modprobe.d/uvesafb.conf"
+sudo update-initramfs -k all -u
 
 
 

@@ -1,2 +1,5 @@
 event=button[ /]power
 action=/usr/sbin/pm-hibernate
+
+event=battery/* PNP0C0A:00 00000080 00000001
+action=/etc/acpi/battery-low.sh %e

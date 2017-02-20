@@ -234,7 +234,51 @@ function stopwatch(){
 }
 %
 %
+exec --no-startup-id xfce4-panel --disable-wm-check
 
+%
+# polkit is necessary for this to work
+
+set $Locker i3lock && sleep 1
+
+set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
+mode "$mode_system" {
+    bindsym l exec --no-startup-id $Locker, mode "default"
+    bindsym e exec --no-startup-id i3-msg exit, mode "default"
+    bindsym s exec --no-startup-id $Locker && systemctl suspend, mode "default"
+    bindsym h exec --no-startup-id $Locker && systemctl hibernate, mode "default"
+    bindsym r exec --no-startup-id systemctl reboot, mode "default"
+    bindsym Shift+s exec --no-startup-id systemctl poweroff -i, mode "default"  
+
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
+bindsym $mod+Pause mode "$mode_system"
+%
+# Set terminal colors when launching screen
+alias tmux="TERM=screen-256color-bce tmux"
+%
+# Fuzzy cd
+function cdf() {
+  cd *$1*/
+}
+%
+black="\[\e[30m\]"
+red="\[\e[31m\]"
+green="\[\e[32m\]"
+yellow="\[\e[33m\]"
+blue="\[\e[34m\]"
+magenta="\[\e[35m\]"
+cyan="\[\e[36m\]"
+white="\[\e[37m\]"
+reset="\[\e[0m\]"
+%
+alias path='echo $PATH | tr -s ":" "\n"'
+%
+# Include custom aliases
+[[ -f ~/.aliases.local ]] && source ~/.aliases.local
 %
 
 %

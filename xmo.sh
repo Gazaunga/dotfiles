@@ -1,5 +1,5 @@
 echo "Updating..."
-sudo pacman -Syu
+sudo pacman -Syu --noconfirm --needed
 echo "Loading Xmonad Config"
 cd ~/.xmonad
 wget https://raw.githubusercontent.com/Gazaunga/dotfiles/master/.xmonad/xmonad.hs
@@ -22,6 +22,6 @@ wget https://raw.githubusercontent.com/Gazaunga/dotfiles/master/.xmonad/dzenPacm
 wget https://raw.githubusercontent.com/Gazaunga/dotfiles/master/.xmonad/mpdConkyrc
 wget https://raw.githubusercontent.com/Gazaunga/dotfiles/master/.xmonad/playPause.sh
 cd ~/
-sudo pacman -Syu
+sudo pacman -Syu --noconfirm --needed
 echo "Your Xmonad-Box is ready!"
 reboot

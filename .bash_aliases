@@ -74,26 +74,6 @@ alias fig='sudo emacs /etc/pacman.conf'
 alias md='sudo updatedb'
 
 
-# Tree
-
-alias dirs='tree -d'
-
-alias dirsa='tree -a'
-
-alias dirsp='tree -f -i'
-
-alias pat='tree -P'
-
-alias bsize='tree -h'
-
-alias lmod='tree -D'
-
-alias new='tree -t'
-
-#alias tree='tree -C'
-
-alias tree='tree -axQhFvAC --noreport'
-
 alias tree="tree -A"
 alias treed="tree -d"
 alias tree1="tree -d -L 1"
@@ -149,7 +129,7 @@ alias makepkg='chrt --idle 0 ionice -c idle makepkg'
 
 alias timer='echo "Timer started. Stop with Ctrl-D." && date && time cat && date' # Stopwatch
 
-alias man='man -P most'
+#alias man='man -P most'
 
 alias ya="yaourt  --nameonly --pager --color --noconfirm $1"
 

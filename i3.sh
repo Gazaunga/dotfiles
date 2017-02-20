@@ -12,7 +12,7 @@ touch .xinitrc
 echo "exec i3" >> .xinitrc
 mkdir .i3
 mkdir i3blocks
-pacaur -S xorg-xinit i3-gaps-git i3blocks-git dmenu rofi emacs polkit-kde-agent-1 termite compton thunar gvfs file-roller thunar-archive plugin thunar-shares-plugin thunar-volman ffmpegthumbnailer tumbler raw-thumbnailer gvfs-smb sshfs nitrogen lxappearance pandoc typora mpv texlive-most cmake darktable
+pacaur -S xorg-xinit i3-gaps-git i3blocks-git dmenu rofi emacs polkit-kde-agent-1 termite compton thunar gvfs file-roller thunar-archive plugin thunar-shares-plugin thunar-volman ffmpegthumbnailer tumbler raw-thumbnailer gvfs-smb sshfs nitrogen lxappearance pandoc typora xfce4-taskmanager mpv texlive-most cmake darktable
 cd .i3
 wget https://raw.githubusercontent.com/Gazaunga/dotfiles/master/.i3/config
 cd ~/.config/i3blocks

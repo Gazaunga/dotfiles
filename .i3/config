@@ -16,21 +16,22 @@ set_from_resource $darkcyan    color6  #000000
 set_from_resource $cyan        color14 #000000
 set_from_resource $darkwhite   color7  #000000
 set_from_resource $white       color15 #000000
+
 # Use custom colors for black
 set $black       #282828
 set $darkblack   #1d2021
 set $transparent #00000000
 
-et $ws1  "1:  "
-set $ws2  "2:  "
-set $ws3  "3:  "
-set $ws4  "4:  "
-set $ws5  "5:  "
-set $ws6  "6:  "
-set $ws7  "7:  "
-set $ws8  "8:  "
-set $ws9  "9:  "
-set $ws10 "10:  "
+set $ws1  "1:&#xf105;"
+set $ws2  "2:&#xf121;"
+set $ws3  "3:&#xf268;"
+set $ws4  "4:&#xf2d7;"
+set $ws5  "5:&#xf1fe;"
+set $ws6  "6:&#xf1c1;"
+set $ws7  "7:&#xf085;"
+set $ws8  "8:&#xf0c0;"
+set $ws9  "9:&#xf19d;"
+set $ws10 "10:&#xf198;"
 
 set $default_gaps_inner 0
 set $default_gaps_outer 0
@@ -68,6 +69,7 @@ bindsym $mod+Return exec termite
 bindsym $mod+q kill
 
 bindsym $mod+d exec --no-startup-id rofi -show run
+#exec --no-startup-id rofi -hide-scrollbar -show window
 
 bindsym $mod+Left focus left
 bindsym $mod+Right focus right
@@ -225,5 +227,49 @@ bar {
 
 # AUTOSTART
 
-#exec_always --no-startup-id feh --bg-fill $HOME/.config/wallpapers/simple.png
-exec --no-startup-id compton -b
+exec_always --no-startup-id feh --bg-fill $HOME/Pictures/wallhaven-222649.jpg
+#exec_always --no-startup-id sh ~/.fehbg
+exec_always --no-startup-id compton -cCGfF -o 0.38 -O 200 -I 200 -t 0 -l 0 -r 3 -D2 -m 0.88
+# exec --no-startup-id xfce4-panel --disable-wm-check
+
+
+# Quake Style Terminal Emulator for i3
+exec --no-startup-id xterm -name scratch
+for_window [instance="scratch"] floating enable;
+for_window [instance="scratch"] move scratchpad; [instance="scratch"] scratchpad show; move position 0px 22px; resize shrink height 300px; resize grow width 683px; move scratchpad
+bindsym $mod+t [instance="qterm"] scratchpad show
+
+set $Locker i3lock && sleep 1
+
+set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
+mode "$mode_system" {
+    bindsym l exec --no-startup-id $Locker, mode "default"
+    bindsym e exec --no-startup-id i3-msg exit, mode "default"
+    bindsym s exec --no-startup-id $Locker && systemctl suspend, mode "default"
+    bindsym h exec --no-startup-id $Locker && systemctl hibernate, mode "default"
+    bindsym r exec --no-startup-id systemctl reboot, mode "default"
+    bindsym Shift+s exec --no-startup-id systemctl poweroff -i, mode "default"  
+
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
+bindsym $mod+Pause mode "$mode_system"
+
+# lock screen
+#bindsym $mod+Escape exec --no-startup-id ~/bin/lockscreen
+
+# screenshot (fullscreen)
+bindsym $mod+F5 exec --no-startup-id scrot ~/Pictures/screenshots/`date +%Y%m%d-%H%M%S`.png
+
+# task manager
+bindsym $mod+BackSpace exec --no-startup-id xfce4-taskmanager
+
+# calendar
+bindsym $mod+c exec --no-startup-id gsimplecal
+
+# 1 pixel decoration on new windows
+new_window 1pixel
+hide_edge_borders both
+

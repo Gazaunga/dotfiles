@@ -1,6 +1,6 @@
 #!/bin/bash
 
-fbterm screen fbv grub-customizer mplayer 
+fbterm screen fbv grub-customizer mplayer fonts-inconsolata
 
 
 

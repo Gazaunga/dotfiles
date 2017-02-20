@@ -280,7 +280,45 @@ alias path='echo $PATH | tr -s ":" "\n"'
 # Include custom aliases
 [[ -f ~/.aliases.local ]] && source ~/.aliases.local
 %
+# lock screen
+bindsym $mod+Escape exec --no-startup-id ~/bin/lockscreen
+%
+# screenshot (fullscreen)
+bindsym $mod+F5 exec --no-startup-id scrot ~/Pictures/screenshots/`date +%Y%m%d-%H%M%S`.png
+%
+# task manager
+bindsym $mod+BackSpace exec --no-startup-id xfce4-taskmanager
+%
+# calendar
+bindsym $mod+c exec --no-startup-id gsimplecal
+%
+exec --no-startup-id rofi -hide-scrollbar -show window
 
+%
+# power menu
+set $sysmenu " [p]oweroff [r]eboot [h]ibernate h[i]bernate-reboot [s]leep "
+bindsym $mod+XF86PowerOff     mode $sysmenu
+
+mode $sysmenu {
+    bindsym p         exec shutdown -P now
+    bindsym r         exec reboot
+    bindsym h	      exec sudo /usr/local/sbin/hibernate; mode "default"
+    bindsym i 	      exec sudo /usr/local/sbin/hibernate reboot; mode "default"
+    bindsym s         exec ~/bin/lockscreen; pm-suspend; mode "default"
+    bindsym Return    mode "default"
+    bindsym Escape    mode "default"
+}
+%
+exec --no-startup-id compton -b --config ~/.config/compton/compton.conf
+%
+exec --no-startup-id sh ~/.fehbg
+%
+
+%
+# 1 pixel decoration on new windows
+new_window 1pixel
+
+hide_edge_borders both
 %
 
 %

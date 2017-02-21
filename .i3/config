@@ -228,7 +228,7 @@ bar {
 
 # AUTOSTART
 
-exec_always --no-startup-id feh --bg-fill $HOME/Pictures/wallhaven-222649.jpg
+exec_always --no-startup-id feh --bg-fill $HOME/Pictures/wallhaven-166605.jpg
 #exec_always --no-startup-id sh ~/.fehbg
 exec_always --no-startup-id compton -cCGfF -o 0.38 -O 200 -I 200 -t 0 -l 0 -r 3 -D2 -m 0.88
 # exec --no-startup-id xfce4-panel --disable-wm-check

@@ -411,6 +411,15 @@ mkd() {
 }
 %
 %
+# play random tv series and movies
 
+play_random_video_file(){
+        FILEDIR=$1
+        find $FILEDIR -type f \( ! -name "*.jpg" ! -name "@eaDir" ! -name "*.vsmeta" !  -name ".txt"  ! -name "*.png" ! -name "*.srt" \) \
+        | sort -R |tail -$N | head -n 1 | \
+        while read file ; do
+            mplayer -nosub -noautosub -fs -zoom -nolirc -nojoystick -nomouseinput -noar -forcedsubsonly $file
+        done
+        }
 %
 

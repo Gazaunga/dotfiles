@@ -34,17 +34,17 @@ set $ws8  "8:&#xf0c0;"
 set $ws9  "9:&#xf19d;"
 set $ws10 "10:&#xf198;"
 
-set $default_gaps_inner 0
-set $default_gaps_outer 0
+set $default_gaps_inner 5
+set $default_gaps_outer 10
 gaps inner $default_gaps_inner
 gaps outer $default_gaps_outer
 
-workspace $ws1 gaps inner 0
-workspace $ws1 gaps outer 0
-workspace $ws9 gaps inner 0
-workspace $ws9 gaps outer 0
-workspace $ws10 gaps inner 0
-workspace $ws10 gaps outer 0
+workspace $ws1 gaps inner 5
+workspace $ws1 gaps outer 5
+workspace $ws9 gaps inner 10
+workspace $ws9 gaps outer 10
+workspace $ws10 gaps inner 7
+workspace $ws10 gaps outer 7
 
 workspace_auto_back_and_forth yes
 force_display_urgency_hint 0 ms

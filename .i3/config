@@ -1,4 +1,5 @@
 set $mod Mod1
+set $win Mod4
 set $editor emacs
 set $term termite
 

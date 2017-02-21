@@ -5,7 +5,7 @@ PATH=$PATH:$HOME/bin
 export EDITOR='emacs'
 export GIT_EDITOR='/usr/bin/emacs'
 export BROWSER=opera
-export TERMINAL=konsole
+export TERMINAL=termite
 export FILEBROWSER=thunar
 
 

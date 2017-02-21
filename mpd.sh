@@ -116,7 +116,7 @@ EOF
 
 EOF
 echo "Trying to create systemd custom settings"
-echo "Root previlegs needed..."
+echo "Root privileges needed..."
 export username="$(whoami)"; su -c "mkdir /etc/systemd/system/mpd.service.d && echo -e \"[Service]\nUser=$username\nPAMName=system-local-login\" > /etc/systemd/system/mpd.service.d/mpd.conf"
 echo "Setup complete"
 echo " "

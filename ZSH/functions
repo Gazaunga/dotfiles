@@ -1,0 +1,44 @@
+# ZSH function to build package and add them to repo
+
+# Build function
+
+function buildpkg {
+
+    local _REPO=~/Packages/Repository
+    local _DATABASE=my_repo.db.tar.xz
+
+    # Clean before building
+    git clean -fx
+
+    # Build
+    sudo ccm64 s
+
+    # Move to repo
+    eval $(cat PKGBUILD | grep pkgname=)
+    eval $(cat PKGBUILD | grep pkgver=)
+    eval $(cat PKGBUILD | grep pkgrel=)
+    cp $pkgname-*$pkgver-$pkgrel-*.pkg.* $_REPO
+    pushd
+    cd $_REPO
+    repo-add -R -f $_DATABASE $pkgname-*$pkgver-$pkgrel-*.pkg.*
+    popd
+
+    # Clean afterwards
+    echo
+    git clean -nx
+    echo "Clean directory? [Yn] "
+    read _ans
+    if [[ $_ans != n ]]; then
+        git clean -fx
+        echo 'Cleaned'
+    fi
+}
+
+# AUR downloader
+
+function aurget {
+    for pkg in $@
+    do
+        git clone https://aur.archlinux.org/$pkg.git
+    done
+}    

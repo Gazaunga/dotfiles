@@ -1,0 +1,9 @@
+background no
+out_to_console yes
+update_interval 1
+total_run_times 0
+use_spacer none
+double_buffer yes
+
+TEXT
+^i(/home/goku/dzen/arch.xbm) ^fg(\#dabb60)${kernel}^fg()  ^i(/home/goku/dzen/cpu.xbm) ^fg(\#fda53c)${cpu cpu0}%^fg()  ^i(/home/goku/dzen/mem.xbm) ^fg(\#e16a98)${memperc}%^fg()  ^i(/home/goku/dzen/fs_01.xbm) ^fg(\#a7bf76)${fs_used_perc /home}%^fg()  ^i(/home/goku/dzen/note.xbm) ^fg(\#e74f4f)${mpd_smart}^fg()  ^i(/home/goku/dzen/net_wired.xbm) ^fg(\#b1ea2a)${downspeedf eth0}^fg()  ^i(/home/goku/dzen/clock.xbm) ^fg(\#b3b3b3)${time %H:%M}^fg() 

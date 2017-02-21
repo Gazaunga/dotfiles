@@ -525,7 +525,269 @@ colours()
 }
 
 %
+https://www.reddit.com/r/dailyscripts/comments/59uqop/jpeg_optimization_script_bash/
 
+
+%
+https://natelandau.com/bash-scripting-utilities/
+%
+alias disapprove='echo ಠ_ಠ'
+
+%
+alias lal='ls -alh'
+alias ll='ls -lh'
+alias lll='ls -alh'
+
+alias nano='vi'
+
+alias ^L='clear'
+
+alias nethack='telnet nethack.alt.org'
+
+mcd() { mkdir -p -- "$1" && cd -- "$1" }
+
+cls() { cd -- "$1" && ls }
+
+backup() { cp -- "$1"{,.bak};}
+
+alias randbg='feh --bg-scale --randomize --no-fehbg ~/Pictures/wallpapers/* &'
+%
+# Needs reflector
+
+alias reflectorize='cat /etc/pacman.d/mirrorlist >> /etc/pacman.d/mirrorlist.top \
+    && rm /etc/pacman.d/mirrorlist \
+    && reflector -c "United States" -p http -a 24 -f 5 --sort rate --save /etc/pacman.d/mirrorlist \
+    && sudo pacman -Syu'
+%
+https://github.com/zer0ed/zer0prompt/
+
+%
+# Start a command in the background, redirect ouptput to /dev/null
+
+b(){
+  ("$@" & disown ) >/dev/null 2>&1 </dev/null
+  which "$1" >/dev/null 2>&1
+}
+%
+alias ssync="rsync --rsh=ssh"
+
+alias GET='wget -qO -'
+
+alias minscr='screen -DRU'
+alias minmux='tmux attach || tmux'
+%
+sshen() {
+    screen -e ^~~ -- ssh -t "$@" -- screen -axARU
+}
+
+moshen() {
+    screen -e ^~~ -- mosh "$@" -- screen -axARU
+}
+%
+alias cdp='wrappercd'
+wrappercd() {
+    if [ $# -eq 0 ]; then
+        popd >/dev/null 2>&1
+    else
+        pushd "$1" >/dev/null
+    fi
+}
+
+%
+[redshift]
+location-provider=manual
+
+[manual]
+lat=43.5
+lon=-80.5
+%
+# Make gradient wallpapers from uigradients.com
+
+mkgradient () {
+    res=$(xrandr | sed -rn "s/.*current (\w+) x (\w+).*/\1x\2/p")
+    rand_deg=$(shuf -i 0-359 -n 1)
+    gradients=$(curl -s uigradients.com/gradients.json)
+    rand_sel=$(shuf -i 0-$(echo "$gradients" | jq length) -n 1)
+    info=($(echo "$gradients" | jq -r ".["$rand_sel"] | \
+                                       .colors[0], \
+                                       .colors[1], \
+                                       .name"))
+    convert -size "$res" \
+            gradient:"${info[0]}"-"${info[1]}" \
+            -distort SRT "$rand_deg" \
+            ~/Hello/wp.png;
+
+    feh --bg-fill ~/Hello/wp.png
+    echo "${info[2]}"
+}
+
+%
+
+# adjust fontsize
+fontsize(){
+    printf '\33]50;%s%d\007' "xft:Terminus:pixelsize=" $1
+}
+%
+alias back='cd "$OLDPWD"'
+%
+
+alias zzz='sudo pm-suspend'
+%
+
+%
+
+wttr () {
+curl http://wttr.in/$1
+}
+
+%
+# Requires Handbrake
+#Convert to .mp4 | Usage: ipod5g foo.mpg
+
+ipod5g () {
+HandBrakeCLI -i "$1" -o "${1%.*}.ipod5g.mp4" --preset="iPod"
+}
+%
+#Sprunge Paste | Usage: sprunge <file>
+function sprunge() {
+  if (($#)); then
+if [[ -f $1 && -r $1 ]]; then
+curl -F 'sprunge=<-' http://sprunge.us < "$1"
+    else
+printf 'file %s does not exist or is not readable\n' "$1" >&2
+      return 1
+    fi
+else
+curl -F 'sprunge=<-' http://sprunge.us
+  fi
+}
+
+%
+# Run a command x times | Usage: runx <value>
+# http://www.stefanoforenza.com/how-to-repeat-a-shell-command-n-times/
+runx() {
+    n=$1
+    shift
+    while [ $(( n -= 1 )) -ge 0 ]
+    do
+        "$@"
+    done
+}
+%
+# Google images search bash function  | Usage: images <foo>
+images() {
+    search=""
+    for term in $*; do
+        search="$search%20$term"
+    done
+    xdg-open "http://www.google.co.uk/search?tbm=isch&hl=en&source=hp&biw=1366&bih=679&q=$search"
+}
+
+# YouTube search bash function  | Usage: videos <foo>
+videos() {
+    search=""
+    for term in $*; do
+        search="$search%20$term"
+    done
+    xdg-open "http://www.youtube.com/results?search_query=$search"
+}
+
+# Wikipedia English search bash function   | Usage: wiki <foo>
+wiki() {
+    search=""
+    for term in $*; do
+        search="$search%20$term"
+    done
+    xdg-open "http://en.wikipedia.org/w/index.php?search=$search"
+}
+
+# Soundcloud music bash search function  | Usage: soundcloud <foo>
+soundcloud() {
+    search=""
+    for term in $*; do
+        search="$search%20$term"
+    done
+    xdg-open "https://soundcloud.com/search?q=$search"
+}
+
+#wallpaper changer
+
+fehpap() {
+        zenity --file-selection | xargs feh --bg-scale 
+ } 
+
+%
+alias genpasswd="strings /dev/urandom | grep -o '[[:alnum:]]' | head -n 30 | tr -d '\n'; echo"
+%
+
+alias cmount="mount | column -t"
+%
+alias meminfo='free -m -l -t'
+%
+
+alias busy="cat /dev/urandom | hexdump -C | grep "ca fe"" 
+%
+
+%
+https://github.com/lakshaykalbhor/MusicNow
+
+%
+
+
+
+%
+
+
+%
+%
+
+
+%
+%
+
+
+%
+%
+
+
+%
+%
+
+
+%
+%
+
+
+%
+
+chknet.sh
+
+#!/bin/bash
+
+green="\x1b[32m"
+red="\x1b[31m"
+reset="\x1b[m"
+
+ON="$green ON $reset"
+OFF="$red OFF $reset"
+
+if (ping -W 2 -c 1 192.168.0.1 &>/dev/null) then
+    echo -e "LAN:\t$ON"
+else 
+    echo -e "LAN:\t$OFF"
+fi
+
+if (ping -W 2 -c 1 8.8.8.8 &>/dev/null) then
+    echo -e "WAN:\t$ON"
+else 
+    echo -e "WAN:\t$OFF"
+fi
+
+if (ping -W 2 -c 1 www.reddit.com &>/dev/null) then
+    echo -e "DNS:\t$ON"
+else
+    echo -e "DNS:\t$OFF"
+fi
 %
 
 

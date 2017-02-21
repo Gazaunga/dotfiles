@@ -1,7 +1,8 @@
 #!/bin/bash
 
 printf 'Installing packages...\n'
-pacaur -S --noconfirm --noedit 
+pacaur -S --noconfirm --noedit xorg-xinit gpodder3 sigil gnome-tweak-tool evince pandoc typora trash-cli rmlint i-nex-git texlive-localmanager-git htop powertop youtube-dl mpv inkscape mpd ncmpcpp discord python-pip krita qutebrowser dmenu emacs termite texlive-most texlive-lang fontforge texstudio clipgrab variety darktable compton thunar gvfs file-roller thunar-archive plugin thunar-shares-plugin thunar-volman ffmpegthumbnailer tumbler raw-thumbnailer gvfs-smb sshfs leafpad ttf-ms-fonts opera
+sudo pip install rainbowstream glances ImageScraper
 
 printf 'Updating pkgfile cache...\n'
 pkgfile --update

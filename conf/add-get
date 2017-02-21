@@ -1,0 +1,11 @@
+mkdir ~/.config
+wget https://raw.githubusercontent.com/Gazaunga/dotfiles/master/.bash_aliases
+wget https://raw.githubusercontent.com/Gazaunga/dotfiles/master/.bash_functions
+wget https://raw.githubusercontent.com/Gazaunga/dotfiles/master/.bashrc -O .bashrc
+wget https://raw.githubusercontent.com/Gazaunga/dotfiles/master/.screenrc
+wget https://raw.githubusercontent.com/Gazaunga/dotfiles/master/.profile -O .profile
+wget https://raw.githubusercontent.com/Gazaunga/dotfiles/master/.Xresources -O .Xresources
+wget https://raw.githubusercontent.com/Gazaunga/dotfiles/master/.config/qutebrowser/qutebrowser.conf
+mkdir ~/.config/termite
+cd ~/termite
+wget https://raw.githubusercontent.com/Gazaunga/dotfiles/master/.config/termite/config2 -O config

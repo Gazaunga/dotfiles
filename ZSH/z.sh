@@ -1,5 +1,12 @@
 #!/bin/bash
 sudo apt-get -y update
+sudo apt-get -y install zsh
+zsh
+chsh -s /bin/zsh
+wget https://raw.githubusercontent.com/Gazaunga/dotfiles/master/ZSH/.zshrc
+git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
+git pull && git submodule update --init --recursive
+cd ~/
 mkdir bin
 cd bin
 wget https://raw.githubusercontent.com/Gazaunga/dotfiles/master/bin/color_blocks.sh
@@ -24,11 +31,6 @@ sudo add-apt-repository -y ppa:noobslab/apps
 sudo apt-get -y --allow-unauthenticated install gdm3 dzen2 nautilus mpv youtube-dl scrot dmenu xscreensaver python-pip xfce4-power-manager rofi termite emacs texstudio arandr leafpad fontforge lxappearance feh darktable rxvt-unicode-256color typora clipgrab variety
 sudo pip install rainbowstream glances ImageScraper
 sudo apt-get -y --allow-unauthenticated update
-zsh
-chsh -s /bin/zsh
-wget https://raw.githubusercontent.com/Gazaunga/dotfiles/master/ZSH/.zshrc
-git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
-git pull && git submodule update --init --recursive
 wget https://raw.githubusercontent.com/Gazaunga/dotfiles/master/setup-nautilus.sh
 sudo chmod +x setup-nautilus.sh
 ./setup-nautilus.sh

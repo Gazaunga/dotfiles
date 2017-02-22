@@ -22,7 +22,7 @@ wget https://raw.githubusercontent.com/Gazaunga/dotfiles/master/setup-nautilus.s
 wget https://raw.githubusercontent.com/Gazaunga/dotfiles/master/bin/color_blocks.sh
 wget https://raw.githubusercontent.com/Gazaunga/dotfiles/master/bin/scrot.sh
 sudo chmod +x setup-nautilus.sh
-./nautilus.sh
+./setup-nautilus.sh
 cd ~/
 touch .profile
 wget --directory-prefix=~/Pictures/ https://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-89055.jpg 

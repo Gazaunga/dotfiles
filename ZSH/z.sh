@@ -15,6 +15,7 @@ cd termite
 wget https://raw.githubusercontent.com/Gazaunga/dotfiles/master/.config/termite/config
 cd ~/
 mkdir .ncmpcpp
+cd .ncmpcpp
 wget https://raw.githubusercontent.com/Gazaunga/dotfiles/master/.ncmpcpp/config
 cd ~/
 git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d

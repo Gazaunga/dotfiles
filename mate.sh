@@ -68,7 +68,7 @@ touch ~/Templates/new
 mkdir .xmonad
 echo "Loading Xmonad Config"
 cd ~/.xmonad
-wget https://raw.githubusercontent.com/Gazaunga/dotfiles/master/.xmonad/xmonad.hs
+wget https://raw.githubusercontent.com/Gazaunga/dotfiles/master/Mate/xmonad.hs -O xmonad.hs
 wget https://raw.githubusercontent.com/Gazaunga/dotfiles/master/.xmonad/Config.hs
 wget https://raw.githubusercontent.com/Gazaunga/dotfiles/master/.xmonad/Hooks.hs
 wget https://raw.githubusercontent.com/Gazaunga/dotfiles/master/.xmonad/Layouts.hs

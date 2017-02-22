@@ -65,3 +65,4 @@ mkdir Pictures
 cd ~/Pictures
 wget https://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-166605.jpg
 sudo apt-get -qq update && sudo apt-get -qq dist-upgrade
+reboot

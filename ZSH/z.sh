@@ -28,7 +28,7 @@ cd ~/
 git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
 sudo add-apt-repository -y 'deb https://typora.io ./linux/'
 sudo add-apt-repository -y ppa:noobslab/apps
-sudo apt-get -y --allow-unauthenticated install gdm3 dzen2 nautilus mpv youtube-dl scrot dmenu xscreensaver python-pip xfce4-power-manager rofi termite emacs texstudio arandr leafpad fontforge lxappearance feh darktable rxvt-unicode-256color typora clipgrab variety
+sudo apt-get -y --allow-unauthenticated install gdm i3 i3blocks dzen2 nautilus mpv youtube-dl scrot dmenu xscreensaver python-pip xfce4-power-manager rofi termite emacs texstudio arandr leafpad fontforge lxappearance feh darktable rxvt-unicode-256color typora clipgrab variety
 sudo pip install rainbowstream glances ImageScraper
 sudo apt-get -y --allow-unauthenticated update
 wget https://raw.githubusercontent.com/Gazaunga/dotfiles/master/setup-nautilus.sh

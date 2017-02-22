@@ -24,13 +24,22 @@ wget https://raw.githubusercontent.com/Gazaunga/dotfiles/master/bin/scrot.sh
 sudo chmod +x setup-nautilus.sh
 ./nautilus.sh
 cd ~/
+touch .profile
 wget --directory-prefix=~/Pictures/ https://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-89055.jpg 
 touch ~/.xsessionrc
 echo "#!/bin/bash" >> ~/.xsessionrc
-echo "xscreensaver -no-splash &" >> ~/.xsessionrc
+echo "exec xmonad" >> ~/.xsessionrc
+echo "export BROWSER=qutebrowser" >> ~/.profile
 echo "feh --bg-scale ~/Pictures/wallhaven-89055.jpg &" >> ~/.xsessionrc
 echo "export GIT_EDITOR='/usr/bin/emacs'" >> ~/.profile
 echo "export FILEBROWSER=nautilus" >> ~/.profile
+echo "alias tmux='tmux -2' #Make tmux assume 256 colors." >> ~/.profile
+echo "alias paste="curl -F 'sprunge=<-' http://sprunge.us"" >> ~/.profile
+echo "alias make="clear && make"" >> ~/.profile
+echo "alias shot="scrot ~/Screenshots/`date +%y-%m-%d-%H:%M:%S`.png"" >> ~/.profile
+echo "alias getip="curl -s checkip.dyndns.org | sed -e 's/.*Current IP Address: //' -e 's/<.*$//'"" >> ~/.profile
+echo "alias l="ls -o -hX --group-directories-first"" >> ~/.profile
+echo "alias la="ls -o -AhX --group-directories-first"" >> ~/.profile
 wget https://github.com/vincelwt/harmony/releases/download/v0.4.5/harmony-0.4.5-amd64.deb
 sudo dpkg -i harmony-0.4.5-amd64.deb
 sudo rm -rf harmony-0.4.5-amd64.deb

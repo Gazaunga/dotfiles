@@ -88,3 +88,41 @@ setopt EXTENDED_GLOB
 for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
   ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
 done
+
+# path {{{
+path=(
+  # danger zone
+  ./node_modules/.bin
+
+  # go
+  $GOPATH/bin
+
+  # ~/.local bin files
+  $HOME/.local/bin
+
+  # binscripts
+  $HOME/bin
+
+  # rust
+  $HOME/.cargo/bin
+
+  # ruby
+  $HOME/.gem/ruby/2.4.0/bin
+
+  # yarn
+  $HOME/.yarn/bin
+
+  # perl
+  /usr/bin/site_perl
+  /usr/bin/vendor_perl
+  /usr/bin/core_perl
+
+  # sane bin
+  /usr/local/sbin
+  /usr/local/bin
+  /usr/bin
+  /bin
+  /sbin
+  /usr/lib/gazbit/default/bin
+)
+# }}}

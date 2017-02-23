@@ -96,6 +96,10 @@ wget https://raw.githubusercontent.com/Gazaunga/dotfiles/master/.xmonad/dzenNetw
 wget https://raw.githubusercontent.com/Gazaunga/dotfiles/master/.xmonad/dzenPacman.hs
 wget https://raw.githubusercontent.com/Gazaunga/dotfiles/master/.xmonad/mpdConkyrc
 wget https://raw.githubusercontent.com/Gazaunga/dotfiles/master/.xmonad/playPause.sh
+#cd ~/
+#wget https://raw.githubusercontent.com/Gazaunga/dotfiles/master/termite-install.sh
+#sudo chmod +x termite-install.sh
+#./termite-install.sh
 echo "Your Xmo Box is ready!"
 sudo apt-get -qq update && sudo apt-get -qq dist-upgrade
 reboot

@@ -12,7 +12,7 @@ cd termite
 wget https://raw.githubusercontent.com/Gazaunga/dotfiles/master/.config/termite/config
 cd ~/
 git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
-sudo apt-get -y install libghc-xmonad-contrib-dev cabal-install mate-desktop rxvt-unicode-256color ncurses-term texlive-full nautilus mpv youtube-dl scrot dmenu python-pip xfce4-power-manager moc emacs texstudio arandr leafpad fontforge lxappearance feh darktable typora
+sudo apt-get -y install libghc-xmonad-contrib-dev xinit cabal-install mate-desktop rxvt-unicode-256color ncurses-term texlive-full nautilus mpv youtube-dl scrot dmenu python-pip xfce4-power-manager moc emacs texstudio arandr leafpad fontforge lxappearance feh darktable typora
 sudo pip install rainbowstream glances ImageScraper
 sudo cabal update
 sudo cabal install --global yeganesh

@@ -14,7 +14,7 @@ wget https://raw.githubusercontent.com/Gazaunga/dotfiles/master/.config/termite/
 cd ~/
 touch ~/.profile
 git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
-sudo apt-get -y install gdm gnome-session-xmonad typora rxvt-unicode-256color neofetch python-pip nautilus ncurses-term texlive-full pandoc mpv youtube-dl scrot dmenu python-pip xfce4-power-manager moc emacs texstudio arandr leafpad fontforge gnome-tweak-tool feh darktable
+sudo apt-get -y install xinit gdm gnome-session-xmonad typora rxvt-unicode-256color neofetch python-pip nautilus ncurses-term texlive-full pandoc mpv youtube-dl scrot dmenu python-pip xfce4-power-manager moc emacs texstudio arandr leafpad fontforge gnome-tweak-tool feh darktable
 sudo pip install rainbowstream glances ImageScraper
 mkdir bin
 cd bin

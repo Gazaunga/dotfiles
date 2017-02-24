@@ -1,0 +1,27 @@
+# mpd
+mpd_host = 127.0.0.1
+mpd_port = 6600
+
+# visualizer
+visualizer_fifo_path = "/tmp/mpd.fifo"
+visualizer_output_name = "fifo"
+visualizer_type = "spectrum"
+visualizer_in_stereo = no
+visualizer_look= ██
+
+# misc
+mouse_support = no
+
+# interface
+user_interface = classic
+header_visibility = no
+statusbar_visibility = no
+titles_visibility = no
+startup_screen = visualizer
+display_volume_level = no
+display_bitrate = no
+display_remaining_time = no
+message_delay_time = 1
+
+# progressbar
+progressbar_look = "  "

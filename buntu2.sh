@@ -18,8 +18,11 @@ wget https://raw.githubusercontent.com/Gazaunga/dotfiles/master/setup-nautilus.s
 wget https://raw.githubusercontent.com/Gazaunga/dotfiles/master/bin/color_blocks.sh
 wget https://raw.githubusercontent.com/Gazaunga/dotfiles/master/bin/scrot.sh
 cd ~/
-mkdir ~/Pictures
+sudo apt-get -y install xdg-user-dirs
+xdg-user-dirs-update
+cd ~/Pictures
 wget --directory-prefix=~/Pictures/ https://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-89055.jpg 
+cd ~/
 touch ~/.xsessionrc
 sudo apt-get -y --allow-unauthenticated install gdm3 texlive-full xmonad dzen2 xmobar nautilus stalonetray mpv youtube-dl libghc-xmonad-contrib-dev cabal-install xcompmgr scrot dmenu xscreensaver python-pip xfce4-power-manager moc rofi termite emacs texstudio arandr leafpad fontforge lxappearance feh darktable rxvt-unicode-256color typora clipgrab variety
 sudo pip install rainbowstream glances ImageScraper

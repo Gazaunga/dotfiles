@@ -1,0 +1,10 @@
+URxvt.foreground: yellow
+
+URxvt.depth: 32
+URxvt*background: rgba:0000/0000/0000/cccc
+
+URxvt.fading: 70
+URxvt.fadeColor: [0]black
+
+URxvt.saveLines:32767
+URxvt.scrollBar: false

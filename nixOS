@@ -1,0 +1,20 @@
+
+# window manager
+services.xserver = {
+    windowManager.xmonad = {
+      enable = true;
+      enableContribAndExtras = true;
+      extraPackages = haskellPackages: [
+        haskellPackages.xmonad-contrib
+        haskellPackages.xmonad-extras
+        haskellPackages.xmonad
+      ];
+    };
+    windowManager.default = "xmonad";
+    
+    # personal keymap
+    displayManager.sessionCommands = with pkgs; lib.mkAfter
+      ''
+      xmodmap /path/to/.Xmodmap
+      '';
+  };

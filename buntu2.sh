@@ -46,12 +46,12 @@ mkdir ~/mpv
 cd ~/mpv
 wget https://raw.githubusercontent.com/Gazaunga/dotfiles/master/mpv.conf
 cd ~/
-wget https://raw.githubusercontent.com/Gazaunga/dotfiles/master/.profile
+wget https://raw.githubusercontent.com/Gazaunga/dotfiles/master/.profile -O .profile
 wget https://raw.githubusercontent.com/Gazaunga/dotfiles/master/.bashrc -O .bashrc
 wget https://raw.githubusercontent.com/Gazaunga/dotfiles/master/.bash_aliases
 wget https://raw.githubusercontent.com/Gazaunga/dotfiles/master/.bash_functions
-wget https://raw.githubusercontent.com/Gazaunga/dotfiles/master/.Xdefaults
-wget https://raw.githubusercontent.com/Gazaunga/dotfiles/master/.Xresources
+wget https://raw.githubusercontent.com/Gazaunga/dotfiles/master/.Xdefaults -O .Xdefaults
+wget https://raw.githubusercontent.com/Gazaunga/dotfiles/master/.Xresources -O .Xresources
 wget https://raw.githubusercontent.com/Gazaunga/dotfiles/master/.screenrc
 mkdir ~/Templates/
 touch ~/Templates/new

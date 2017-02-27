@@ -1,10 +1,45 @@
-URxvt.foreground: yellow
+! .Xresources - rofi
 
-URxvt.depth: 32
-URxvt*background: rgba:0000/0000/0000/cccc
+rofi.lines: 20
+rofi.width: 300
+rofi.location: 1
+rofi.yoffset: 44
+rofi.xoffset: 11
+rofi.scrollbar-width: 0
 
-URxvt.fading: 70
-URxvt.fadeColor: [0]black
+rofi.color-window: #060809 
+rofi.color-normal: #0c0f10, #dce4e9, #151a1c, #252b2e, #9bc4b7
+rofi.color-active: #1d1f20, #ffffff, #1d1f20, #c89f86, #1d1f20
+rofi.color-urgent: #1d1f20, #ffffff, #1d1f20, #8096a0, #1d1f20
 
-URxvt.saveLines:32767
-URxvt.scrollBar: false
+*background: #1D1F21
+*foreground: #C5C8C6
+! black
+*color0: #282A2E
+*color8: #373B41
+! red
+*color1: #A54242
+*color9: #CC6666
+! green
+*color2: #8C9440
+*color10: #B5BD68
+! yellow
+*color3: #DE935F
+*color11: #F0C674
+! blue
+*color4: #5F819D
+*color12: #81A2BE
+! magenta
+*color5: #85678F
+*color13: #B294BB
+! cyan
+*color6: #5E8D87
+*color14: #8ABEB7
+! white
+*color7: #707880
+*color15: #C5C8C6
+
+URxvt.font: xft:Hack:regular:size=13
+URxvt.scrollBar: 	false
+URxvt.internalBorder: 	15
+URxvt.borderless: 	true

@@ -126,3 +126,132 @@ path=(
   /usr/lib/gazbit/default/bin
 )
 # }}}
+
+zstyle ':completion:*' menu select
+
+setopt COMPLETE_ALIASES
+
+bindkey -v
+
+export TMP="$HOME/tmp"
+export TEMP="$TMP"
+export TMPDIR="$TMP"
+if [ ! -d "${TMP}" ]; then mkdir "${TMP}"; fi
+
+if ! [[ "${PATH}" =~ "^${HOME}/bin" ]]; then
+    export PATH="${HOME}/bin:${PATH}"
+fi
+
+# Colors.
+red='\e[0;31m'
+RED='\e[1;31m'
+green='\e[0;32m'
+GREEN='\e[1;32m'
+yellow='\e[0;33m'
+YELLOW='\e[1;33m'
+blue='\e[0;34m'
+BLUE='\e[1;34m'
+purple='\e[0;35m'
+PURPLE='\e[1;35m'
+cyan='\e[0;36m'
+CYAN='\e[1;36m'
+NC='\e[0m'
+
+if [[ -f /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]]; then
+  . /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+fi
+
+#------------------------------
+# Variables
+#------------------------------
+export BROWSER="qutebrowser"
+export EDITOR="emacs"
+
+#-----------------------------
+# Dircolors
+#-----------------------------
+LS_COLORS='rs=0:di=01;34:ln=01;36:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:su=37;41:sg=30;43:tw=30;42:ow=34;42:st=37;44:ex=01;32:';
+export LS_COLORS
+
+typeset -g -A key
+# for rxvt
+bindkey "\e[8~" end-of-line
+bindkey "\e[7~" beginning-of-line
+
+confirm() {
+    local answer
+    echo -ne "zsh: sure you want to run '${YELLOW}$*${NC}' [yN]? "
+    read -q answer
+        echo
+    if [[ "${answer}" =~ ^[Yy]$ ]]; then
+        command "${@}"
+    else
+        return 1
+    fi
+}
+
+confirm_wrapper() {
+    if [ "$1" = '--root' ]; then
+        local as_root='true'
+        shift
+    fi
+
+    local prefix=''
+
+    if [ "${as_root}" = 'true' ] && [ "${USER}" != 'root' ]; then
+        prefix="sudo"
+    fi
+    confirm ${prefix} "$@"
+}
+
+poweroff() { confirm_wrapper --root $0 "$@"; }
+reboot() { confirm_wrapper --root $0 "$@"; }
+hibernate() { confirm_wrapper --root $0 "$@"; }
+
+if over_ssh && [ -z "${TMUX}" ]; then
+    prompt_is_ssh='%F{blue}[%F{red}SSH%F{blue}] '
+elif over_ssh; then
+    prompt_is_ssh='%F{blue}[%F{253}SSH%F{blue}] '
+else
+    unset prompt_is_ssh
+fi
+
+# Prevent record in history entry if preceding them with at least one space
+setopt hist_ignore_space
+
+
+
+# -- coloured manuals
+man() {
+  env \
+    LESS_TERMCAP_mb=$(printf "\e[1;31m") \
+    LESS_TERMCAP_md=$(printf "\e[1;31m") \
+    LESS_TERMCAP_me=$(printf "\e[0m") \
+    LESS_TERMCAP_se=$(printf "\e[0m") \
+    LESS_TERMCAP_so=$(printf "\e[1;44;33m") \
+    LESS_TERMCAP_ue=$(printf "\e[0m") \
+    LESS_TERMCAP_us=$(printf "\e[1;32m") \
+    man "$@"
+}
+
+case $TERM in
+  termite|*xterm*|rxvt|rxvt-unicode|rxvt-256color|rxvt-unicode-256color|(dt|k|E)term)
+    precmd () {
+      vcs_info
+      print -Pn "\e]0;[%n@%M][%~]%#\a"
+    } 
+    preexec () { print -Pn "\e]0;[%n@%M][%~]%# ($1)\a" }
+    ;;
+  screen|screen-256color)
+    precmd () { 
+      vcs_info
+      print -Pn "\e]83;title \"$1\"\a" 
+      print -Pn "\e]0;$TERM - (%L) [%n@%M]%# [%~]\a" 
+    }
+    preexec () { 
+      print -Pn "\e]83;title \"$1\"\a" 
+      print -Pn "\e]0;$TERM - (%L) [%n@%M]%# [%~] ($1)\a" 
+    }
+    ;; 
+esac
+

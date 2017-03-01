@@ -1,6 +1,6 @@
 [options]
-font = Hack 12
-browser = opera
+font = tamzen 12
+browser = qutebrowser
 clickable_url = false
 dynamic_title = true
 geometry = 1000x600

@@ -1,0 +1,27 @@
+## zshrc ##
+
+# Use jk for ESC
+bindkey -M viins 'jj' vi-cmd-mode
+
+# Use vim cli mode
+bindkey '^j' up-history
+bindkey '^k' down-history
+
+
+# ctrl-w removed word backwards
+bindkey '^w' backward-kill-word
+
+# texlive {{{
+export PATH=$PATH:/opt/texbin
+# }}}
+
+# aliases {{{
+alias ls='ls --color'
+alias ll='ls -al'
+alias lh='ls -hl'
+alias l='ls -alt'
+alias sudo='sudo '
+alias tlmgr='env PATH="$PATH" tlmgr'
+# }}}
+
+# vim:foldmethod=marker:foldlevel=0

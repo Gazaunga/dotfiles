@@ -1,4 +1,7 @@
 #!/bin/bash
+mkdir ~/bin
+cd ~/bin
+wget https://raw.githubusercontent.com/Gazaunga/Scripts/master/bin/.scripts/utils.sh
 
 source $HOME/bin/utils.sh
 cd ~/

@@ -78,7 +78,7 @@ list="$(to_install "${recipes[*]}" "$(pacaur -S --noconfirm --noedit list)")"
 if [[ "$list" ]]; then
 for item in ${list[@]}
   do
-   echo "$item is not on the list"
+   pacaur -S --noconfirm --noedit "$item"
   done
 else
 e_arrow "Nothing to install. You've already got them all."

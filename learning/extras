@@ -917,7 +917,44 @@ else
 fi
 %
 
+## to be used with gnome terminal as well
 
+.config/gtk-3.0/gtk.css
+
+headerbar.default-decoration {
+ padding-top: 0px;
+ padding-bottom: 0px;
+ padding-right: 5px;
+ min-height: 0px;
+ font-size: 0.6em;
+}
+
+headerbar.default-decoration button.titlebutton {
+ padding: 0px;
+ padding-top: 5px;
+ min-height: 0px;
+} 
+
+vte-terminal {
+    padding: 0px 15px 15px 15px;
+}
+for the titlelessness i was put in the following lines into .zshrc:
+DISABLE_AUTO_TITLE="true"
+printf "\033];%s\07" " "
+%
+
+%
+alias cls="echo -ne '\033c'"
+%
+bindsym $mod+Shift+z exec "~/.local/bin/lockscreen"
+
+%
+function dotenv {
+    (
+        test -e .env && source .env
+        eval $@
+    )
+}
 %
 
 %

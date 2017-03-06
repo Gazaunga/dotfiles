@@ -956,7 +956,34 @@ function dotenv {
     )
 }
 %
-
+# open
+if ! hash open 2>/dev/null; then
+    alias open=xdg-open
+fi
+%
+# dircolors
+if [ -f ~/.dir_colors ] ; then
+    if hash dircolors 2>/dev/null; then
+	eval $(dircolors ~/.dir_colors)
+    elif hash gdircolors 2>/dev/null; then
+	eval $(gdircolors ~/.dir_colors)
+    fi  
+fi
+%
+# cabal
+[[ -f $HOME/.cabal/bin ]] && PATH=$HOME/.cabal/bin:$PATH
+%
+function ssht() {
+    ssh $* -t 'tmux a || tmux || /bin/zsh || /bin/bash'
+}
+%
+# create a temporary dir and cd to it
+alias cdtemp='cd $(mktemp -d /tmp/tmpd.$(date +%s).XXX)'
+alias cdlasttemp='cd $(ls -d /tmp/tmpd* | tail -n1)'
+%
+hsetroot -solid #000000
+exec xmonad
+%
 %
 
 

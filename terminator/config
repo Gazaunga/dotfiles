@@ -1,0 +1,70 @@
+[global_config]
+  borderless = True
+  enabled_plugins = LaunchpadCodeURLHandler, APTURLHandler, LaunchpadBugURLHandler
+  geometry_hinting = False
+  handle_size = 1
+  hide_from_taskbar = True
+  inactive_color_offset = 1.0
+  suppress_multiple_term_dialog = True
+  title_inactive_bg_color = "#d23986"
+  title_receive_fg_color = "#ed5050"
+  title_transmit_fg_color = "#d05050"
+[keybindings]
+  close_term = None
+  go_down = <Alt>j
+  go_left = <Alt>h
+  go_right = <Alt>l
+  go_up = <Alt>k
+  resize_down = <Primary><Shift>j
+  resize_left = <Primary><Shift>h
+  resize_right = <Primary><Shift>l
+  resize_up = <Primary><Shift>k
+  search = <Primary><Shift><Alt>f
+  zoom_in = None
+  zoom_out = None
+[layouts]
+  [[default]]
+    [[[child1]]]
+      parent = window0
+      type = Terminal
+    [[[window0]]]
+      parent = ""
+      type = Window
+[plugins]
+[profiles]
+  [[default]]
+    background_color = "#262626"
+    background_darkness = 0.0
+    background_image = /home/suraj/Downloads/dark_wall.png
+    cursor_blink = False
+    cursor_color = "#708284"
+    custom_command = tmux -2 attatch -t suraj
+    font = Hack 11
+    foreground_color = "#ebdbb2"
+    icon_bell = False
+    palette = "#262626:#cc241d:#98971a:#d79921:#458588:#b16286:#689d6a:#bdae93:#7c6f64:#fb4934:#b8bb26:#fabd2f:#83a598:#d3869b:#8ec07c:#ebdbb2"
+    scrollbar_position = hidden
+    show_titlebar = False
+    use_system_font = False
+  [[New Profile]]
+    background_image = None
+  [[default - TRU BACKUP]]
+    background_color = "#2b2d2e"
+    background_image = None
+    cursor_blink = False
+    cursor_color = "#708284"
+    font = Droid Sans Mono for Powerline 12
+    foreground_color = "#d2d8d9"
+    palette = "#7d8b8f:#b23a52:#789b6a:#b9ac4a:#2a7fac:#bd4f5a:#44a799:#d2d8d9:#888888:#f24840:#80c470:#ffeb62:#4196ff:#fc5275:#53cdbd:#d2d8d9"
+    show_titlebar = False
+    use_system_font = False
+  [[default_backup1]]
+    background_color = "#20242d"
+    background_image = None
+    cursor_blink = False
+    cursor_color = "#b3b8c3"
+    font = Fira Mono for Powerline 12
+    foreground_color = "#b3b8c3"
+    palette = "#000000:#b04b57:#87b379:#e5c179:#7d8fa4:#a47996:#85a7a5:#b3b8c3:#000000:#b04b57:#87b379:#e5c179:#7d8fa4:#a47996:#85a7a5:#ffffff"
+    show_titlebar = False
+    use_system_font = False

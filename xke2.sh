@@ -30,4 +30,9 @@ pacaur -S --noconfirm --noedit xorg xorg-xinit \
 cd
 mv .xmonad .xmonad.orig
 git clone https://github.com/Gazaunga/xmonad-config.git .xmonad
+cd ~/
+wget https://raw.githubusercontent.com/Gazaunga/Ubi3/master/.Xresources -O .Xresources
+wget https://raw.githubusercontent.com/Gazaunga/Ubi3/master/.bash_aliases -O .bash_aliases
+wget https://raw.githubusercontent.com/Gazaunga/Ubi3/master/.bash_functions -O .bash_functions
+wget https://raw.githubusercontent.com/Gazaunga/Ubi3/master/.bashrc -O .bashrc
 reboot

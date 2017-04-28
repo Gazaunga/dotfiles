@@ -1,6 +1,6 @@
 #!/bin/bash
 sudo pacamn -Syu --noconfirm
-pacaur -S --noedit --noconfirm polybar rofi firefox nitrogen compton dmenu krita polkit nm-applet xfce4-power-manager pamac-aur clipit blueman xbindkeys conky pavucontrol octopi discord oblogout lxappearance clipgrab pcmanfm skype gksu ranger dunst xdotool neovim python2-neovim python-neovim screen
+pacaur -S --noedit --noconfirm polybar rofi firefox nitrogen compton dmenu krita polkit network-manager-applet xfce4-power-manager pamac-aur clipit blueman xbindkeys conky pavucontrol octopi discord oblogout lxappearance clipgrab pcmanfm skype gksu ranger dunst xdotool neovim python2-neovim python-neovim screen
 git clone https://github.com/unix121/i3wm-themes.git
 cd i3wm-themes/themes/Minimal/
 cp .i3/config ~/.config/i3/config

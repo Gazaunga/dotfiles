@@ -1,0 +1,13 @@
+task default: %w[test]
+
+task :test do
+  ruby "test/unittest.rb"
+end
+
+This Rakefile has two tasks:
+
+A task named “test”, which – upon invocation – will run a unit test file in Ruby.
+
+A task named “default”. This task does nothing by itself, but it has exactly one dependency, namely the “test” task. Invoking the “default” task will cause Rake to invoke the “test” task as well.
+
+Running the “rake” command without any options will cause it to run the “default” task in the Rakefile
